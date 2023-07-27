@@ -1,37 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'; // Update import statement
-import myImage from './images/lake.png';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Ai from './ai.js';
-
+import Ai from './ai.js'; // Keep the imported component as Ai
+import { App1 } from './app1'; // Update the filename case
 function App() {
   return (
     <Router>
-      <div className="container">
-        <div className="column">
-          <img src={myImage} alt="My Image" />
-          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quisquam illum laudantium dolorum possimus
-            repellendus nam eos, explicabo, reiciendis soluta eius iusto velit. Tempora dolorum fugit temporibus quisquam minima corrupti?</p>
-          <Link className="custom-link" to="/ai">Link to Next Page</Link>
-        </div>
-        <div className="column">
-          <img src={myImage} alt="My Image" />
-          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quisquam illum laudantium dolorum possimus
-            repellendus nam eos, explicabo, reiciendis soluta eius iusto velit. Tempora dolorum fugit temporibus quisquam minima corrupti?</p>
-            <Link className="custom-link" to="/ai">Link to Next Page</Link>
-        </div>
-        <div className="column">
-          <img src={myImage} alt="My Image" />
-          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quisquam illum laudantium dolorum possimus
-            repellendus nam eos, explicabo, reiciendis soluta eius iusto velit. Tempora dolorum fugit temporibus quisquam minima corrupti?</p>
-            <Link className="custom-link" to="/ai">Link to Next Page</Link>
-        </div>
-
-        {/* Use Routes instead of Switch */}
-        <Routes>
-          <Route path="/ai" element={<Ai />} />
-        </Routes>
-      </div>
+      <Routes>
+        {/* Use nested Route components inside Routes */}
+        <Route path="/app1" element={<App1 />} /> {/* Render App1 component for the '/app1' path */}
+        <Route path="/ai" element={<Ai />} /> {/* Render Ai component for the '/ai' path */}
+      </Routes>
     </Router>
   );
 }

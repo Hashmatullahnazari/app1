@@ -1,5 +1,5 @@
-// ai.js
 import React from 'react';
+
 
 const Ai = () => {
   return (
